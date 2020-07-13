@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "pm2 start src",
+    "start": "pm2-runtime start src --env production",
     "dev": "nodemon src/index.js"
   },
   "dependencies": {
