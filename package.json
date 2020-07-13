@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node src",
+    "start": "pm2 start src",
     "stop": "pm2 stop src",
     "dev": "nodemon src/index.js"
   },
