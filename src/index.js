@@ -5,14 +5,14 @@ const http = require('http');
 
 const routes = require('./routes');
 const { setupWebsocket } = require('./websocket');
-const url = process.env.MONGO_URL;
-if (!url) const { MONGO_URL } = require('../.env');
 const app = express();
 const server = http.Server(app);
-const dev = app.get('env') !== 'production';
-
+let url = process.env.MONGO_URL;
+if (!process.env.MONGO_URL) {
+  url = require('../.env').MONGO_URL;
+}
 setupWebsocket(server);
-mongoose.connect(url || MONGO_URL, {
+mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
