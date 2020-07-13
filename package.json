@@ -4,6 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "i-prod": "npm install pm2 -g",
+    "start": "pm2-runtime app.js -i max",
+    "prod": "yarn i-prod && yarn start",
     "dev": "nodemon src/index.js"
   },
   "dependencies": {
