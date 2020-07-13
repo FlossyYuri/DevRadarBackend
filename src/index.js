@@ -10,7 +10,6 @@ const app = express();
 const server = http.Server(app);
 
 setupWebsocket(server);
-
 mongoose.connect(MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
